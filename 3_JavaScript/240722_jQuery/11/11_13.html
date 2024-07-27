@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  <script>
+    $(document).ready(function(){
+      // 초기 설정
+      let clearQueue = false; // 애니메이션 대기열을 비울지 여부
+      let goToEnd = false; // 애니메이션 종료 후 끝으로 가는지 여부
+
+      // clearQueue 체크박스 변경 이벤트
+      $('#clearQueue').change(function(){
+        clearQueue = $(this).prop('checked'); // 체크 여부에 따라 clearQueue 값 설정
+      });
+
+      // goToEnd 체크박스 변경 이벤트
+      $('#goToEnd').change(function(){
+        goToEnd = $(this).prop('checked'); // 체크 여부에 따라 goToEnd 값 설정
+      });
+
+      // 정지 버튼 클릭 이벤트
+      $('#stopButton').click(function(){
+        $('#box').stop(clearQueue, goToEnd); // 애니메이션 정지
+      });
+
+      // 초기 박스 스타일 설정
+      $('#box').css({
+        width: 100,
+        height: 100,
+        background: 'pink',
+      });
+
+      // 주기적으로 반복되는 애니메이션 설정
+      setInterval(function(){
+        $('#box').animate({
+          width: 200
+        }, 1000).delay(1000).animate({
+          width: 100,
+          height: 100
+        }, 1000);
+      }, 3000); // 3초마다 실행
+    });
+  </script>
+</head>
+
+<body>
+  <label> clearQueue </label>
+  <input id="clearQueue" type="checkbox"> <!-- 애니메이션 대기열 비우기 체크박스 -->
+  <br>
+  <label> goToEnd </label>
+  <input id="goToEnd" type="checkbox"> <!-- 애니메이션 종료 후 끝으로 가기 체크박스 -->
+  <br>
+  <button id="stopButton"> 정지 버튼 </button> <!-- 애니메이션 정지 버튼 -->
+  <div id="box"> Box  </div> <!-- 애니메이션이 적용될 박스 -->
+</body>
+
+</html>

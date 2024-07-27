@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('a').click(function() {
+        alert('클릭했습니다');
+        event.preventDefault();
+      })
+    })
+  </script>
+
+</head>
+
+<body>
+  <a href="http://hanbit.co.kr"> 한빛 출판사 </a>
+</body>
+
+</html>

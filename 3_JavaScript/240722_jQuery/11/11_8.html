@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('h1').hover(function(){
+        $(this).css({
+          background : 'pink',
+          color : 'white',
+        })
+      }, function(){
+        $(this).css({
+          background : '',
+          color : '',
+        })
+      })
+    })
+  </script>
+
+</head>
+
+<body>
+  <h1> 마우스를 올려주세요 :) </h1>
+</body>
+
+</html>
