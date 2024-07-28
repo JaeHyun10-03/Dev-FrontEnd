@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+</body>
+
+<script>
+
+  const arr = [];
+  for(let i=0; i<15; i++){
+    let star = "";
+    for(let j=0; j<15; j++){
+      if(j < 7-i){
+        star += " ";
+      }else if(j > 7+i){
+        star += " ";
+      }else{
+        star += "*";
+      }
+    }
+    arr.push(star);
+  }
+  console.log(arr.join("\n"));
+</script>
+
+</html>

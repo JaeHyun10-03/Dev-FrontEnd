@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> JavaScript : </title>
+  <style>
+    output {
+      background: pink;
+      width: 100px;
+    }
+  </style>
+  <script>
+    let result = "";
+    function input() {
+      const data = document.getElementById('input').value;
+      if(+data % 400 == 0){
+        result = "윤년";
+      }else if(+data % 100 == 0){
+        result = "윤년이 아님";
+      }else if(+data % 4 == 0){
+        result = "윤년";
+      }else{
+        result = "윤년이 아님";
+      }
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+</head>
+
+<body>
+  <input id='input' onkeyup='input()' />
+  <div id='result'></div>
+
+</body>
+</html>

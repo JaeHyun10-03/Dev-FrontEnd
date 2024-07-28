@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  const arr = [];
+  for (let i = 0; i < 10; i++) {
+    let star = ""
+    if (i < 5) {
+      for (let j = 0; j <= 18; j++) {
+        if (j < 9 - i || j > 9 + i) {
+          star += " ";
+        } else {
+          star += "*";
+        }
+      }
+    } else {
+      for (let j = 0; j <= 18; j++) {
+        if ((j >= i && j <= 18 - i) || j < 9 - i || j > 9 + i) {
+          star += " ";
+        }
+        else {
+          star += "*";
+        }
+      }
+    }
+    arr.push(star);
+  }
+  console.log(arr.join("\n"));
+</script>
+
+</html>
