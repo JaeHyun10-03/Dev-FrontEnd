@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> JavaScript : 문서객체모델 </title>
+</head>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelectorAll('h1');
+
+    header.forEach((header) => {
+      header.textContent = '헤더 헤더 헤더 헤더 헤더 ';
+      header.style.color = 'pink';
+      header.style.background = 'skyblue';
+      header.style.padding = "100px";
+    })
+
+  })
+</script>
+
+<body>
+  <h1></h1>
+  <h1></h1>
+  <h1></h1>
+  <h1></h1>
+  <h1></h1>
+  <h1></h1>
+  <h1></h1>
+  <h1></h1>
+</body>
+
+</html>
