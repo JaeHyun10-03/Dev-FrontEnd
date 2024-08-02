@@ -1,28 +1,55 @@
-// let div = document.querySelector('div');
+// let div = document.querySelector("div");
+// console.log(div);
 // function changeContent() {
-//   div.outerHTML = '<h1>DOM API</h1>';
+
+//     div.outerHTML = "<h1>DOM API</h1><p>선수 조건: 없음</p>"
 // }
+
+// const ele = document.getElementsByTagName('li');
+// [...ele].forEach(ele => {ele.style.color = 'red';})
+
+// const elems = document.getElementsByClassName('fruit');
+// [...elems].forEach(elem => {elem.style.color = "red"});
+
+// const apple = document.getElementsByClassName('fruit apple');
+// [...apple].forEach(elem => {elem.style.color = "blue"})
+
+// // const boxEl = document.querySelector('.box');
+// // boxEl.addEventListener('click', function() {
+// //    console.log("Click!");
+// //    boxEl.classList.toggle('active')     
+// // })
+
+// const boxEls = document.querySelectorAll('.box');
+// boxEls.forEach(function(boxEl, index){
+//     boxEl.classList.add(`order-${index + 1}`);
+
+// })
 
 // const div = document.getElementById('my_div');
 // const clearbtn = document.getElementById('clearbtn');
 // const result = document.getElementById('result');
 
-// div.addEventListener('click', (event) => {
-//   result.innerHTML += '<div>click</div>';
+// div.addEventListener('click', (event)=>{
+//     result.innerHTML+='<div>click</div>';
 // });
-// div.addEventListener('mousedown', (event) => {
-//   result.innerHTML += '<div>mousedown</div>';
+// div.addEventListener('mousedown', (event)=>{
+//     result.innerHTML+='<div>mousedown</div>';
 // });
-// div.addEventListener('mouseup', (event) => {
-//   result.innerHTML += '<div>mouseup</div>';
+// div.addEventListener('mouseup', (event)=>{
+//     result.innerHTML+='<div>mouseup</div>';
 // });
-// clearbtn.addEventListener('click', (event) => {
-//   result.innerHTML = '';
-// });
+// clearbtn.addEventListener('click', (event)=>{
+//     result.innerHTML= "";
+// })
+
+// function sayHi(name){
+//     console.log(`Hi ${name}`)
+// }
 
 // const button = document.querySelector('button');
 
-// const handleClick = () => console.log('button Click');
+// const handleClick = () => console.log('button click');
 
 // button.onclick = handleClick;
 
@@ -30,43 +57,72 @@
 
 // button.onclick = null;
 
-// button.addEventListener('click', function add() {
-//   console.log('click!');
-//   button.removeEventListener('click', add);
-// });
+// button.addEventListener('click', function add(){
+//     console.log('click!')
+//     button.removeEventListener('click', add);
+// } );
 
-// const buttons = document.querySelectorAll('.check');
+// const msg = document.querySelector('.message');
 
-// buttons.forEach(function (button) {
-//   button.addEventListener('click', function () {
-//     button.classList.toggle('active');
-//   });
-// });
+// function showCoords(e){
+//     msg.textContent = `clientX: ${e.clientX}, clientY: ${e.clientY}`
+// }
+// document.onclick = showCoords;
 
-// $checkbox.addEventListener('click', (event) => {
-//   const parentNode = event.target.parentNode;
-//   console.log(parentNode);
-//   parentNode = `<del>${parentNode}</del>`;
-// });
+// const fruits = document.getElementById('fruits');
+// function activate({target}) {
+//     if(!target.matches('#fruits > li')) return;
+//     [...fruits.children].forEach(fruit => {
+//         fruit.classList.toggle('active', fruit === target)
+//     })
+// }
+// fruits.onclick = activate;
 
-// const box = document.querySelector('.box');
-// const initialMousePos = { x: 0, y: 0 };
-// const offset = { x: 0, y: 0 };
+// const buttons = document.querySelectorAll(".check");
+// buttons.forEach(function(button) {
+//     button.addEventListener("click", function() {
+//         button.classList.toggle('active');
+//     })
+// })
+// const box = document.querySelector(".box");
+// const initialMousePos = {x: 0, y: 0};
+// const offset = {x: 0, y: 0};
 
-// const move = (e) => {};
+// const move = e => {
+//     offset.x = e.clientX - initialMousePos.x;
+//     offset.y = e.clientY - initialMousePos.y;
+//     box.style.transform = `translate3d(${offset.x}px, ${offset.y}px, 0)`;
 
-// document.addEventListener('click', (e) => {
-//   const newX = e.clientX;
-//   const newY = e.clientY;
-//   // initialMousePos.x = e.clientX - offset.x;
-//   // initialMousePos.y = e.clientY - offset.y;
-//   // offset.x = e.clientX - initialMousePos.x;
-//   // offset.y = e.clientY - initialMousePos.y;
-//   offset.x = newX;
-//   offset.y = newY;
-//   box.style.transform = `translate3d(${offset.x}px, ${offset.y}px 0)`;
+// };
+
+// box.addEventListener('mousedown', e => {
+//     initialMousePos.x = e.clientX - offset.x;
+//     initialMousePos.y = e.clientY - offset.y;
+
+//     document.addEventListener('mousemove', move);
 // });
 
 // document.addEventListener('mouseup', () => {
-//   document.removeEventListener('mousemove', move);
-// });
+//     document.removeEventListener('mousemove', move);
+// })
+
+
+// const button = document.querySelector('button');
+// button.onclick = function () {
+//   console.log('이벤트 핸들러 프로퍼티 방식');
+// }
+// button.onclick = function () {
+//   console.log('이벤트 핸들러 프로퍼티 방식2');
+// }
+// button.onclick = function () {
+//   console.log('이벤트 핸들러 프로퍼티 방식3');
+// }
+// button.addEventListener('click', function(){
+//   console.log('addEventListener1');
+// })
+// button.addEventListener('click', function(){
+//   console.log('addEventListener2');
+// })
+// button.addEventListener('click', function(){
+//   console.log('addEventListener3');
+// })
