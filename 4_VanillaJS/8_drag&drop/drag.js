@@ -46,11 +46,11 @@ const draggables = document.querySelectorAll('.draggable');
 const containers = document.querySelectorAll('.container');
 
 draggables.forEach((draggable)=>{
-  draggable.addEventListener("dragstart", (e)=>{
+  draggable.addEventListener("dragstart", ()=>{
     draggable.classList.add('dragging');
   });
 
-  draggable.addEventListener('dragend', (e)=>{
+  draggable.addEventListener('dragend', ()=>{
     draggable.classList.remove('dragging');
   })
 })
@@ -65,7 +65,6 @@ containers.forEach((container)=>{
     }else{
       container.insertBefore(draggable, afterElement);
     }
-    console.log(e);
   })
 })
 
